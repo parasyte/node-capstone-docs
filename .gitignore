@@ -1,0 +1,18 @@
+## OSX junk
+.DS_Store
+.Trashes
+._*
+
+## Windows junk
+Thumbs.db
+Desktop.ini
+
+## Temporary files
+*.tmp
+*~
+
+# Vim swap files
+*.sw*
+
+## Keep the placeholders
+!.placeholder
