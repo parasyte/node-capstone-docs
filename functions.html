@@ -1,29 +1,1396 @@
-<!doctype html><html class="no-js" lang="en"> <head> <meta charset="utf-8" /> <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <title>node-capstone</title> <link href="css/normalize.css" rel="stylesheet" /> <link href="css/foundation.min.css" rel="stylesheet" /> <link href="css/prism.css" rel="stylesheet" /> <link href="css/app.css" rel="stylesheet" /> <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"> <script src="js/vendor/modernizr.js"></script> </head> <body> <nav class="top-bar" data-topbar> <ul class="title-area"> <li class="name"> <h1> <a href="index.html">node-capstone</a> </h1> </li> </ul> <section class="top-bar-section"> <ul class="right"> <li class="active"> <a href="https://github.com/parasyte/node-capstone.git"> <span class="fa fa-fw fa-2x fa-github-square"></span>Fork Me </a> </li> </ul> </section> </nav> <div class="row"> <section class="sidebar small-3 column"> <dl> <dt><a href="index.html">Main</a></dt>  <dt>Modules</dt> <dd> <ul class="side-nav">  <li><a href="arm.html">arm</a></li>  <li><a href="arm64.html">arm64</a></li>  <li><a href="mips.html">mips</a></li>  <li><a href="ppc.html">ppc</a></li>  <li><a href="x86.html">x86</a></li>  <li><a href="sparc.html">sparc</a></li>  <li><a href="sysz.html">sysz</a></li>  <li><a href="xcore.html">xcore</a></li>  </ul> </dd>   <dt>Classes</dt> <dd> <ul class="side-nav">  <li><a href="CsSkipdata.html">CsSkipdata</a></li>  <li><a href="CsInsn.html">CsInsn</a></li>  <li><a href="Cs.html">Cs</a></li>  </ul> </dd>   <dt><a href="functions.html">Functions</a></dt> <dd> <ul class="side-nav">  <li><a href="functions.html#INSN_OFFSET">INSN_OFFSET</a></li>  <li><a href="functions.html#version">version</a></li>  <li><a href="functions.html#version_bind">version_bind</a></li>  <li><a href="functions.html#support">support</a></li>  <li><a href="functions.html#strerror">strerror</a></li>  </ul> </dd>   <dt><a href="constants.html">Constants</a></dt> <dd> <ul class="side-nav">  <li><a href="constants.html#ARCH">ARCH</a></li>  <li><a href="constants.html#SUPPORT">SUPPORT</a></li>  <li><a href="constants.html#ERR">ERR</a></li>  <li><a href="constants.html#MODE">MODE</a></li>  <li><a href="constants.html#SYNTAX">SYNTAX</a></li>  </ul> </dd>  </dl> </section> <section class="content small-9 column"><div id="INSN_OFFSET" class="item"> <h3> <span class="radius label">Function</span> INSN_OFFSET(insns, pos) <a href="#INSN_OFFSET" title="Link here"><span class="fa fa-link"></span></a> </h3> <p> <span class="fa fa-reply fa-flip-vertical" title="Returns"></span> <kbd title="Types">Number</kbd> <p>Instruction offset.</p> </p> <hr>  <table class="args"> <thead> <tr> <th>Arg Name</th> <th>Type</th> <th>Description</th> </tr> </thead> <tbody>  <tr> <td class="name">insns</td> <td><a href="Array.html#<CsInsn>">Array.<CsInsn></a></td> <td><p>Array of instructions.</p></td> </tr>  <tr> <td class="name">pos</td> <td>Number</td> <td><p>Position.</p></td> </tr>  </tbody> </table>  <p>Calculate the offset of a disassembled instruction in its buffer,<br />given its position in its array of disassembled insn</p><p><em>NOTE: this macro works with position (&gt;=1), not index</em></p> <div> <a href="#" class="toggle-code right" title="Toggle the Source Code"> Source <span class="fa fa-code"></span> </a> <hr class="toggle-sep"> <pre class="toggle-code hide language-javascript"><code class="language-javascript">exports.INSN_OFFSET = function (insns, pos) {
+
+
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>node-capstone</title>
+    <link href="css/normalize.css" rel="stylesheet" />
+    <link href="css/foundation.min.css" rel="stylesheet" />
+    <link href="css/prism.css" rel="stylesheet" />
+    <link href="css/app.css" rel="stylesheet" />
+    <link
+      href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"
+      rel="stylesheet">
+    <script src="js/vendor/modernizr.js"></script>
+  </head>
+  <body>
+
+    <nav class="top-bar" data-topbar>
+      <ul class="title-area">
+        <li class="name">
+          <h1>
+            <a href="index.html">node-capstone</a>
+          </h1>
+        </li>
+      </ul>
+      <section class="top-bar-section">
+        <ul class="right">
+          <li class="active">
+            <a href="https://github.com/parasyte/node-capstone.git">
+              <span class="fa fa-fw fa-2x fa-github-square"></span>Fork Me
+            </a>
+          </li>
+        </ul>
+      </section>
+    </nav>
+
+    <div class="row">
+      <section class="sidebar small-3 column">
+        <dl>
+  <dt><a href="index.html">Main</a></dt>
+
+  <dt>Modules</dt>
+  <dd>
+    <ul class="side-nav">
+      <li>
+        <a href="arm.html">arm</a>
+      </li><li>
+        <a href="arm64.html">arm64</a>
+      </li><li>
+        <a href="mips.html">mips</a>
+      </li><li>
+        <a href="ppc.html">ppc</a>
+      </li><li>
+        <a href="x86.html">x86</a>
+      </li><li>
+        <a href="sparc.html">sparc</a>
+      </li><li>
+        <a href="sysz.html">sysz</a>
+      </li><li>
+        <a href="xcore.html">xcore</a>
+      </li>
+    </ul>
+  </dd>
+
+
+  <dt>Classes</dt>
+  <dd>
+    <ul class="side-nav">
+      <li>
+        <a href="CsSkipdata.html">CsSkipdata</a>
+      </li><li>
+        <a href="CsInsn.html">CsInsn</a>
+      </li><li>
+        <a href="Cs.html">Cs</a>
+      </li>
+    </ul>
+  </dd>
+
+
+  <dt><a href="functions.html">Functions</a></dt>
+  <dd>
+    <ul class="side-nav">
+      <li>
+        <a href="functions.html#_toNative">_toNative</a>
+      </li><li>
+        <a href="functions.html#INSN_OFFSET">INSN_OFFSET</a>
+      </li><li>
+        <a href="functions.html#version">version</a>
+      </li><li>
+        <a href="functions.html#version_bind">version_bind</a>
+      </li><li>
+        <a href="functions.html#support">support</a>
+      </li><li>
+        <a href="functions.html#strerror">strerror</a>
+      </li><li>
+        <a href="functions.html#close">close</a>
+      </li><li>
+        <a href="functions.html#errno">errno</a>
+      </li><li>
+        <a href="functions.html#disasm">disasm</a>
+      </li><li>
+        <a href="functions.html#disasm_lite">disasm_lite</a>
+      </li><li>
+        <a href="functions.html#disasm_iter">disasm_iter</a>
+      </li><li>
+        <a href="functions.html#reg_name">reg_name</a>
+      </li><li>
+        <a href="functions.html#insn_name">insn_name</a>
+      </li><li>
+        <a href="functions.html#insn_group">insn_group</a>
+      </li><li>
+        <a href="functions.html#reg_read">reg_read</a>
+      </li><li>
+        <a href="functions.html#reg_write">reg_write</a>
+      </li><li>
+        <a href="functions.html#op_count">op_count</a>
+      </li><li>
+        <a href="functions.html#op_index">op_index</a>
+      </li><li>
+        <a href="functions.html#REL_ADDR">REL_ADDR</a>
+      </li>
+    </ul>
+  </dd>
+
+
+  <dt><a href="constants.html">Constants</a></dt>
+  <dd>
+    <ul class="side-nav">
+      <li>
+        <a href="constants.html#REG">REG</a>
+      </li><li>
+        <a href="constants.html#INS">INS</a>
+      </li><li>
+        <a href="constants.html#GRP">GRP</a>
+      </li><li>
+        <a href="constants.html#SFT">SFT</a>
+      </li><li>
+        <a href="constants.html#CC">CC</a>
+      </li><li>
+        <a href="constants.html#MB">MB</a>
+      </li><li>
+        <a href="constants.html#OP">OP</a>
+      </li><li>
+        <a href="constants.html#SETEND">SETEND</a>
+      </li><li>
+        <a href="constants.html#CPSMODE">CPSMODE</a>
+      </li><li>
+        <a href="constants.html#CPSFLAG">CPSFLAG</a>
+      </li><li>
+        <a href="constants.html#VECTORDATA">VECTORDATA</a>
+      </li><li>
+        <a href="constants.html#EXT">EXT</a>
+      </li><li>
+        <a href="constants.html#SYSREG">SYSREG</a>
+      </li><li>
+        <a href="constants.html#MSR">MSR</a>
+      </li><li>
+        <a href="constants.html#PSTATE">PSTATE</a>
+      </li><li>
+        <a href="constants.html#VAS">VAS</a>
+      </li><li>
+        <a href="constants.html#VESS">VESS</a>
+      </li><li>
+        <a href="constants.html#BARRIER">BARRIER</a>
+      </li><li>
+        <a href="constants.html#TLBI">TLBI</a>
+      </li><li>
+        <a href="constants.html#AT">AT</a>
+      </li><li>
+        <a href="constants.html#DC">DC</a>
+      </li><li>
+        <a href="constants.html#IC">IC</a>
+      </li><li>
+        <a href="constants.html#PRFM">PRFM</a>
+      </li><li>
+        <a href="constants.html#ARCH">ARCH</a>
+      </li><li>
+        <a href="constants.html#SUPPORT">SUPPORT</a>
+      </li><li>
+        <a href="constants.html#ERR">ERR</a>
+      </li><li>
+        <a href="constants.html#MODE">MODE</a>
+      </li><li>
+        <a href="constants.html#SYNTAX">SYNTAX</a>
+      </li><li>
+        <a href="constants.html#BC">BC</a>
+      </li><li>
+        <a href="constants.html#HINT">HINT</a>
+      </li><li>
+        <a href="constants.html#AVX_BCAST">AVX_BCAST</a>
+      </li><li>
+        <a href="constants.html#AVX_SSE_CC">AVX_SSE_CC</a>
+      </li><li>
+        <a href="constants.html#AVX_AVX_CC">AVX_AVX_CC</a>
+      </li><li>
+        <a href="constants.html#AVX_RM">AVX_RM</a>
+      </li><li>
+        <a href="constants.html#PREFIX">PREFIX</a>
+      </li>
+    </ul>
+  </dd>
+
+
+  <dt><a href="misc.html">Miscellaneous</a></dt>
+  <dd>
+    <ul class="side-nav">
+      <li>
+        <a href="misc.html#id">id</a>
+      </li><li>
+        <a href="misc.html#address">address</a>
+      </li><li>
+        <a href="misc.html#bytes">bytes</a>
+      </li><li>
+        <a href="misc.html#mnemonic">mnemonic</a>
+      </li><li>
+        <a href="misc.html#op_str">op_str</a>
+      </li><li>
+        <a href="misc.html#detail">detail</a>
+      </li><li>
+        <a href="misc.html#detail.regs_read">detail.regs_read</a>
+      </li><li>
+        <a href="misc.html#detail.regs_write">detail.regs_write</a>
+      </li><li>
+        <a href="misc.html#detail.groups">detail.groups</a>
+      </li><li>
+        <a href="misc.html#detail">detail</a>
+      </li><li>
+        <a href="misc.html#mode">mode</a>
+      </li><li>
+        <a href="misc.html#syntax">syntax</a>
+      </li><li>
+        <a href="misc.html#skipdata">skipdata</a>
+      </li>
+    </ul>
+  </dd>
+
+</dl>
+
+      </section>
+      <section class="content small-9 column">
+
+
+<div id="_toNative" class="item">
+
+  <h3>
+    <span class="radius label">Function</span>
+    _toNative()
+    <a href="#_toNative" title="Link here"><span class="fa fa-link"></span></a>
+  </h3>
+
+
+  <p>
+    <span class="fa fa-reply fa-flip-vertical" title="Returns"></span>
+    <kbd title="Types"><a href="constants.html#InsnType">InsnType</a></kbd>
+    <p>Native instruction struct.</p>
+  </p>
+
+
+  <hr>
+
+
+
+  <p>Convert JavaScript object to native struct.</p>
+
+  <div>
+    <a href="#" class="toggle-code right" title="Toggle the Source Code">
+      Source
+      <span class="fa fa-code"></span>
+    </a>
+    <hr class="toggle-sep">
+    <pre class="toggle-code hide language-javascript"><code class="language-javascript">Object.defineProperty(CsInsn.prototype, "_toNative", {
+    "value" : function () {
+        if (this._nativeInsn) {
+            return this._nativeInsn;
+        }
+
+        // Convert arch number to string
+        var archStr = exports.ARCH.toString(this.arch);
+
+        var insn = new InsnType();
+
+        insn.id.set(this.id);
+        insn.address.set(this.address);
+        insn.size.set(this.bytes.length);
+
+        new Buffer(this.bytes).copy(insn.bytes);
+
+        insn.mnemonic.writeCString(0, this.mnemonic);
+        insn.op_str.writeCString(0, this.op_str);
+
+        if (this.detail) {
+            insn.detail = ref.alloc(DetailType);
+            var detail = insn.detail.deref();
+
+            detail.regs_read.buffer.fill(0);
+            detail.regs_write.buffer.fill(0);
+            detail.groups.buffer.fill(0);
+
+            new Buffer(this.detail.regs_read).copy(detail.regs_read.buffer);
+            new Buffer(this.detail.regs_write).copy(detail.regs_write.buffer);
+            new Buffer(this.detail.groups).copy(detail.groups.buffer);
+
+            detail.regs_read_count.set(this.detail.regs_read.length);
+            detail.regs_write_count.set(this.detail.regs_write.length);
+            detail.groups_count.set(this.detail.groups.length);
+
+            detail.arch[archStr]._load(this.detail[archStr]);
+        }
+
+        Object.defineProperty(this, "_nativeInsn", {
+            "get" : function () {
+                return insn;
+            }
+        });
+
+        return insn;
+    }
+});</code></pre>
+  </div>
+</div>
+
+<div id="INSN_OFFSET" class="item">
+
+  <h3>
+    <span class="radius label">Function</span>
+    INSN_OFFSET(insns, pos)
+    <a href="#INSN_OFFSET" title="Link here"><span class="fa fa-link"></span></a>
+  </h3>
+
+
+  <p>
+    <span class="fa fa-reply fa-flip-vertical" title="Returns"></span>
+    <kbd title="Types">Number</kbd>
+    <p>Instruction offset.</p>
+  </p>
+
+
+  <hr>
+
+
+  <table class="args">
+    <thead>
+      <tr>
+        <th>Arg Name</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr>
+        <td class="name">insns</td>
+        <td><a href="CsInsn.html#CsInsn">CsInsn[]</a></td>
+        <td><p>Array of instructions.</p></td>
+      </tr>
+      
+      <tr>
+        <td class="name">pos</td>
+        <td>Number</td>
+        <td><p>Position.</p></td>
+      </tr>
+      
+    </tbody>
+  </table>
+
+
+  <p>Calculate the offset of a disassembled instruction in its buffer,<br />given its position in its array of disassembled insn</p><p><em>NOTE: this macro works with position (&gt;=1), not index</em></p>
+
+  <div>
+    <a href="#" class="toggle-code right" title="Toggle the Source Code">
+      Source
+      <span class="fa fa-code"></span>
+    </a>
+    <hr class="toggle-sep">
+    <pre class="toggle-code hide language-javascript"><code class="language-javascript">exports.INSN_OFFSET = function (insns, pos) {
     return insns[pos - 1].address - insns[0].address;
-};</code></pre> </div></div><div id="version" class="item"> <h3> <span class="radius label">Function</span> version() <a href="#version" title="Link here"><span class="fa fa-link"></span></a> </h3> <p> <span class="fa fa-reply fa-flip-vertical" title="Returns"></span> <kbd title="Types"><a href="Array.html#<Number>">Array.<Number></a></kbd> <p>Three-element array containing: [ combined, major, minor ]</p> </p> <hr>  <p>Retrieve version number from the Capstone library.</p><pre><code class="lang-javascript">var version = capstone.version();
+};</code></pre>
+  </div>
+</div>
+
+<div id="version" class="item">
+
+  <h3>
+    <span class="radius label">Function</span>
+    version()
+    <a href="#version" title="Link here"><span class="fa fa-link"></span></a>
+  </h3>
+
+
+  <p>
+    <span class="fa fa-reply fa-flip-vertical" title="Returns"></span>
+    <kbd title="Types">Number[]</kbd>
+    <p>Three-element array containing: [ combined, major, minor ]</p>
+  </p>
+
+
+  <hr>
+
+
+
+  <p>Retrieve version number from the Capstone library.</p><pre><code class="lang-javascript">var version = capstone.version();
 console.log(
     &quot;combined: 0x%s, version: %s&quot;,
     version[0].toString(16), version.slice(1).join(&quot;.&quot;)
 );
 //&gt; combined: 0x201, version: 2.1
 </code></pre>
- <div> <a href="#" class="toggle-code right" title="Toggle the Source Code"> Source <span class="fa fa-code"></span> </a> <hr class="toggle-sep"> <pre class="toggle-code hide language-javascript"><code class="language-javascript">exports.version = function () {
+
+
+  <div>
+    <a href="#" class="toggle-code right" title="Toggle the Source Code">
+      Source
+      <span class="fa fa-code"></span>
+    </a>
+    <hr class="toggle-sep">
+    <pre class="toggle-code hide language-javascript"><code class="language-javascript">exports.version = function () {
     var major = ref.alloc("int");
     var minor = ref.alloc("int");
     var combined = capstone.cs_version(major, minor);
     return [ combined, major.deref(), minor.deref() ];
-};</code></pre> </div></div><div id="version_bind" class="item"> <h3> <span class="radius label">Function</span> version_bind() <a href="#version_bind" title="Link here"><span class="fa fa-link"></span></a> </h3> <p> <span class="fa fa-reply fa-flip-vertical" title="Returns"></span> <kbd title="Types"><a href="Array.html#<Number>">Array.<Number></a></kbd> <p>Three-element array containing: [ combined, major, minor ]</p> </p> <hr>  <p>Retrieve version number from the JavaScript bindings.</p><pre><code class="lang-javascript">var version = capstone.version();
+};</code></pre>
+  </div>
+</div>
+
+<div id="version_bind" class="item">
+
+  <h3>
+    <span class="radius label">Function</span>
+    version_bind()
+    <a href="#version_bind" title="Link here"><span class="fa fa-link"></span></a>
+  </h3>
+
+
+  <p>
+    <span class="fa fa-reply fa-flip-vertical" title="Returns"></span>
+    <kbd title="Types">Number[]</kbd>
+    <p>Three-element array containing: [ combined, major, minor ]</p>
+  </p>
+
+
+  <hr>
+
+
+
+  <p>Retrieve version number from the JavaScript bindings.</p><pre><code class="lang-javascript">var version = capstone.version();
 console.log(
     &quot;combined: 0x%s, version: %s&quot;,
     version[0].toString(16), version.slice(1).join(&quot;.&quot;)
 );
 //&gt; combined: 0x201, version: 2.1
 </code></pre>
- <div> <a href="#" class="toggle-code right" title="Toggle the Source Code"> Source <span class="fa fa-code"></span> </a> <hr class="toggle-sep"> <pre class="toggle-code hide language-javascript"><code class="language-javascript">exports.version_bind = function () {
+
+
+  <div>
+    <a href="#" class="toggle-code right" title="Toggle the Source Code">
+      Source
+      <span class="fa fa-code"></span>
+    </a>
+    <hr class="toggle-sep">
+    <pre class="toggle-code hide language-javascript"><code class="language-javascript">exports.version_bind = function () {
     return [ VERSION[0] << 8 | VERSION[1], VERSION[0], VERSION[1] ];
-};</code></pre> </div></div><div id="support" class="item"> <h3> <span class="radius label">Function</span> support(query) <a href="#support" title="Link here"><span class="fa fa-link"></span></a> </h3> <p> <span class="fa fa-reply fa-flip-vertical" title="Returns"></span> <kbd title="Types">Bool</kbd> <p>True if Capstone supports the given arch or support.</p> </p> <hr>  <table class="args"> <thead> <tr> <th>Arg Name</th> <th>Type</th> <th>Description</th> </tr> </thead> <tbody>  <tr> <td class="name">query</td> <td><a href="constants.html#ARCH">ARCH</a>, <a href="constants.html#SUPPORT">SUPPORT</a></td> <td><p>Architecture or Support query.</p></td> </tr>  </tbody> </table>  <p>Query Capstone for supported architectures.</p><pre><code class="lang-javascript">console.log(capstone.support(capstone.ARCH_ALL)); //&gt; true
+};</code></pre>
+  </div>
+</div>
+
+<div id="support" class="item">
+
+  <h3>
+    <span class="radius label">Function</span>
+    support(query)
+    <a href="#support" title="Link here"><span class="fa fa-link"></span></a>
+  </h3>
+
+
+  <p>
+    <span class="fa fa-reply fa-flip-vertical" title="Returns"></span>
+    <kbd title="Types">Bool</kbd>
+    <p>True if Capstone supports the given arch or support.</p>
+  </p>
+
+
+  <hr>
+
+
+  <table class="args">
+    <thead>
+      <tr>
+        <th>Arg Name</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr>
+        <td class="name">query</td>
+        <td><a href="constants.html#ARCH">ARCH</a>, <a href="constants.html#SUPPORT">SUPPORT</a></td>
+        <td><p>Architecture or Support query.</p></td>
+      </tr>
+      
+    </tbody>
+  </table>
+
+
+  <p>Query Capstone for supported architectures.</p><pre><code class="lang-javascript">console.log(capstone.support(capstone.ARCH_ALL)); //&gt; true
 console.log(capstone.support(capstone.SUPPORT_DIET)); //&gt; false
 </code></pre>
- <div> <a href="#" class="toggle-code right" title="Toggle the Source Code"> Source <span class="fa fa-code"></span> </a> <hr class="toggle-sep"> <pre class="toggle-code hide language-javascript"><code class="language-javascript">exports.support = capstone.cs_support;</code></pre> </div></div><div id="strerror" class="item"> <h3> <span class="radius label">Function</span> strerror(code) <a href="#strerror" title="Link here"><span class="fa fa-link"></span></a> </h3> <p> <span class="fa fa-reply fa-flip-vertical" title="Returns"></span> <kbd title="Types">String</kbd> <p>Error description</p> </p> <hr>  <table class="args"> <thead> <tr> <th>Arg Name</th> <th>Type</th> <th>Description</th> </tr> </thead> <tbody>  <tr> <td class="name">code</td> <td><a href="constants.html#ERR">ERR</a></td> <td><p>Error code</p></td> </tr>  </tbody> </table>  <p>Return a string describing the given error code.</p><pre><code class="lang-javascript">console.log(capstone.strerror(capstone.ERR_DETAIL));
+
+
+  <div>
+    <a href="#" class="toggle-code right" title="Toggle the Source Code">
+      Source
+      <span class="fa fa-code"></span>
+    </a>
+    <hr class="toggle-sep">
+    <pre class="toggle-code hide language-javascript"><code class="language-javascript">exports.support = capstone.cs_support;</code></pre>
+  </div>
+</div>
+
+<div id="strerror" class="item">
+
+  <h3>
+    <span class="radius label">Function</span>
+    strerror(code)
+    <a href="#strerror" title="Link here"><span class="fa fa-link"></span></a>
+  </h3>
+
+
+  <p>
+    <span class="fa fa-reply fa-flip-vertical" title="Returns"></span>
+    <kbd title="Types">String</kbd>
+    <p>Error description</p>
+  </p>
+
+
+  <hr>
+
+
+  <table class="args">
+    <thead>
+      <tr>
+        <th>Arg Name</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr>
+        <td class="name">code</td>
+        <td><a href="constants.html#ERR">ERR</a></td>
+        <td><p>Error code</p></td>
+      </tr>
+      
+    </tbody>
+  </table>
+
+
+  <p>Return a string describing the given error code.</p><pre><code class="lang-javascript">console.log(capstone.strerror(capstone.ERR_DETAIL));
 </code></pre>
- <div> <a href="#" class="toggle-code right" title="Toggle the Source Code"> Source <span class="fa fa-code"></span> </a> <hr class="toggle-sep"> <pre class="toggle-code hide language-javascript"><code class="language-javascript">exports.strerror = capstone.cs_strerror;</code></pre> </div></div> </section> </div> <section class="footer"> Copyright &copy; 2014 <a href="mailto:jay@kodewerx.org"> Jay Oster </a>  <a href="https://twitter.com/kodewerx"> <span class="round label fa fa-twitter"> @kodewerx </span> </a>  <br> <a href="https://github.com/parasyte">Github</a> |  <a href="http://blog.kodewerx.org/">Blog</a> |  <a href="http://www.kodewerx.org/">Website</a> </section> <script src="js/vendor/jquery.js"></script> <script src="js/foundation.min.js"></script> <script>$(document).foundation();</script> <script src="js/prism.min.js"></script> <script src="js/vendor/jquery.easing.js"></script> <script src="js/app.js"></script> </body></html>
+
+
+  <div>
+    <a href="#" class="toggle-code right" title="Toggle the Source Code">
+      Source
+      <span class="fa fa-code"></span>
+    </a>
+    <hr class="toggle-sep">
+    <pre class="toggle-code hide language-javascript"><code class="language-javascript">exports.strerror = capstone.cs_strerror;</code></pre>
+  </div>
+</div>
+
+<div id="close" class="item">
+
+  <h3>
+    <span class="radius label">Function</span>
+    close()
+    <a href="#close" title="Link here"><span class="fa fa-link"></span></a>
+  </h3>
+
+
+
+  <hr>
+
+
+
+  <p>Free allocated memory for this Capstone instance. This must be called when<br />the Capstone instance is no longer needed. DO NOT let the Capstone instance<br />get garbage collected until this method has been called.</p>
+
+  <div>
+    <a href="#" class="toggle-code right" title="Toggle the Source Code">
+      Source
+      <span class="fa fa-code"></span>
+    </a>
+    <hr class="toggle-sep">
+    <pre class="toggle-code hide language-javascript"><code class="language-javascript">exports.Cs.prototype.close = function () {
+    var errno = capstone.cs_close(this.csh);
+    if (errno) {
+        throw "cs_close returned " + errno + ": " + exports.strerror(errno);
+    }
+};</code></pre>
+  </div>
+</div>
+
+<div id="errno" class="item">
+
+  <h3>
+    <span class="radius label">Function</span>
+    errno()
+    <a href="#errno" title="Link here"><span class="fa fa-link"></span></a>
+  </h3>
+
+
+  <p>
+    <span class="fa fa-reply fa-flip-vertical" title="Returns"></span>
+    <kbd title="Types"><a href="constants.html#ERR">ERR</a></kbd>
+    <p>Error code</p>
+  </p>
+
+
+  <hr>
+
+
+
+  <p>Report last error when a Capstone API function fails.</p>
+
+  <div>
+    <a href="#" class="toggle-code right" title="Toggle the Source Code">
+      Source
+      <span class="fa fa-code"></span>
+    </a>
+    <hr class="toggle-sep">
+    <pre class="toggle-code hide language-javascript"><code class="language-javascript">exports.Cs.prototype.errno = function () {
+    return capstone.cs_errno(this.csh.deref());
+};</code></pre>
+  </div>
+</div>
+
+<div id="disasm" class="item">
+
+  <h3>
+    <span class="radius label">Function</span>
+    disasm(buffer, addr, [max=0])
+    <a href="#disasm" title="Link here"><span class="fa fa-link"></span></a>
+  </h3>
+
+
+  <p>
+    <span class="fa fa-reply fa-flip-vertical" title="Returns"></span>
+    <kbd title="Types"><a href="CsInsn.html#CsInsn">CsInsn[]</a></kbd>
+    <p>Array of instructions.</p>
+  </p>
+
+
+  <hr>
+
+
+  <table class="args">
+    <thead>
+      <tr>
+        <th>Arg Name</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr>
+        <td class="name">buffer</td>
+        <td><a href="constants.html#Buffer">Buffer</a></td>
+        <td><p>Binary to disassemble.</p></td>
+      </tr>
+      
+      <tr>
+        <td class="name">addr</td>
+        <td>Number</td>
+        <td><p>Starting address for the given buffer.</p></td>
+      </tr>
+      
+      <tr>
+        <td class="name">[max=0]</td>
+        <td>Number</td>
+        <td><p>Max number of instructions to disassemble.</p></td>
+      </tr>
+      
+    </tbody>
+  </table>
+
+
+  <p>Disassemble the binary contained in a Buffer.</p>
+
+  <div>
+    <a href="#" class="toggle-code right" title="Toggle the Source Code">
+      Source
+      <span class="fa fa-code"></span>
+    </a>
+    <hr class="toggle-sep">
+    <pre class="toggle-code hide language-javascript"><code class="language-javascript">exports.Cs.prototype.disasm = function (buffer, addr, max) {
+    var insn = ref.alloc(new ArrayType(InsnType));
+
+    var count = capstone.cs_disasm(
+        this.csh.deref(),
+        buffer,
+        buffer.length,
+        addr,
+        max || 0,
+        insn
+    );
+    if (!count) {
+        var errno = this.errno();
+        throw "cs_disasm returned " + errno + ": " + exports.strerror(errno);
+    }
+
+    // Get instruction array, and fix length
+    var insns = insn.deref();
+    insns.length = count;
+
+    // Create a JavaScript view of the instruction array
+    var instructions = [];
+    for (var i = 0; i < count; i++) {
+        instructions.push(new CsInsn(insns[i], this.arch));
+    }
+
+    // Free the native instruction array
+    capstone.cs_free(insns.buffer, count);
+
+    return instructions;
+};</code></pre>
+  </div>
+</div>
+
+<div id="disasm_lite" class="item">
+
+  <h3>
+    <span class="radius label">Function</span>
+    disasm_lite(buffer, addr, [max=0])
+    <a href="#disasm_lite" title="Link here"><span class="fa fa-link"></span></a>
+  </h3>
+
+
+  <p>
+    <span class="fa fa-reply fa-flip-vertical" title="Returns"></span>
+    <kbd title="Types">Array[]</kbd>
+    <p>Instruction arrays: [ address, size, mnemonic, op_str ]</p>
+  </p>
+
+
+  <hr>
+
+
+  <table class="args">
+    <thead>
+      <tr>
+        <th>Arg Name</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr>
+        <td class="name">buffer</td>
+        <td><a href="constants.html#Buffer">Buffer</a></td>
+        <td><p>Binary to disassemble.</p></td>
+      </tr>
+      
+      <tr>
+        <td class="name">addr</td>
+        <td>Number</td>
+        <td><p>Starting address for the given buffer.</p></td>
+      </tr>
+      
+      <tr>
+        <td class="name">[max=0]</td>
+        <td>Number</td>
+        <td><p>Max number of instructions to disassemble.</p></td>
+      </tr>
+      
+    </tbody>
+  </table>
+
+
+  <p>Disassemble the binary contained in a Buffer, with a lightweight API.</p>
+
+  <div>
+    <a href="#" class="toggle-code right" title="Toggle the Source Code">
+      Source
+      <span class="fa fa-code"></span>
+    </a>
+    <hr class="toggle-sep">
+    <pre class="toggle-code hide language-javascript"><code class="language-javascript">exports.Cs.prototype.disasm_lite = function (buffer, addr, max) {
+    var insn = ref.alloc(new ArrayType(InsnType));
+
+    var count = capstone.cs_disasm(
+        this.csh.deref(),
+        buffer,
+        buffer.length,
+        addr,
+        max || 0,
+        insn
+    );
+    if (!count) {
+        var errno = this.errno();
+        throw "cs_disasm_lite returned " + errno + ": " +
+            exports.strerror(errno);
+    }
+
+    // Get instruction array, and fix length
+    var insns = insn.deref();
+    insns.length = count;
+
+    // Create a JavaScript view of the instruction array
+    var instructions = [];
+    for (var i = 0; i < count; i++) {
+        instructions.push([
+            insns[i].address,
+            insns[i].size,
+            insns[i].mnemonic.buffer.readCString(0),
+            insns[i].op_str.buffer.readCString(0)
+        ]);
+    }
+
+    // Free the native instruction array
+    capstone.cs_free(insns.buffer, count);
+
+    return instructions;
+};</code></pre>
+  </div>
+</div>
+
+<div id="disasm_iter" class="item">
+
+  <h3>
+    <span class="radius label">Function</span>
+    disasm_iter(buffer, addr, insn)
+    <a href="#disasm_iter" title="Link here"><span class="fa fa-link"></span></a>
+  </h3>
+
+
+  <p>
+    <span class="fa fa-reply fa-flip-vertical" title="Returns"></span>
+    <kbd title="Types"><a href="constants.html#Boolean">Boolean</a></kbd>
+    <p>True if successfully disassembled one instruction.</p>
+  </p>
+
+
+  <hr>
+
+
+  <table class="args">
+    <thead>
+      <tr>
+        <th>Arg Name</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr>
+        <td class="name">buffer</td>
+        <td><a href="constants.html#Buffer">Buffer</a></td>
+        <td><p>Binary to disassemble.</p></td>
+      </tr>
+      
+      <tr>
+        <td class="name">addr</td>
+        <td>Number</td>
+        <td><p>Starting address for the given buffer.</p></td>
+      </tr>
+      
+      <tr>
+        <td class="name">insn</td>
+        <td><a href="CsInsn.html#CsInsn">CsInsn</a></td>
+        <td><p>Disassembled instruction detail.</p></td>
+      </tr>
+      
+    </tbody>
+  </table>
+
+
+  <p>Disassemble the binary contained in a Buffer, with the iterator API.</p>
+
+  <div>
+    <a href="#" class="toggle-code right" title="Toggle the Source Code">
+      Source
+      <span class="fa fa-code"></span>
+    </a>
+    <hr class="toggle-sep">
+    <pre class="toggle-code hide language-javascript"><code class="language-javascript">exports.Cs.prototype.disasm_iter = function () { //(iter, callback) {
+    // TODO
+    // `iter` is a dictionary that the iterator will update
+    // `callback` is called for each iteration, receiving the CsInsn
+    // Will need to interally allocate a cs_insn buffer for this method
+};</code></pre>
+  </div>
+</div>
+
+<div id="reg_name" class="item">
+
+  <h3>
+    <span class="radius label">Function</span>
+    reg_name(id)
+    <a href="#reg_name" title="Link here"><span class="fa fa-link"></span></a>
+  </h3>
+
+
+  <p>
+    <span class="fa fa-reply fa-flip-vertical" title="Returns"></span>
+    <kbd title="Types">String</kbd>
+    <p>Register name, or null on error</p>
+  </p>
+
+
+  <hr>
+
+
+  <table class="args">
+    <thead>
+      <tr>
+        <th>Arg Name</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr>
+        <td class="name">id</td>
+        <td>Number</td>
+        <td><p>Register ID</p></td>
+      </tr>
+      
+    </tbody>
+  </table>
+
+
+  <p>Return register name as a string for given register ID.</p>
+
+  <div>
+    <a href="#" class="toggle-code right" title="Toggle the Source Code">
+      Source
+      <span class="fa fa-code"></span>
+    </a>
+    <hr class="toggle-sep">
+    <pre class="toggle-code hide language-javascript"><code class="language-javascript">exports.Cs.prototype.reg_name = function (id) {
+    return capstone.cs_reg_name(this.csh.deref(), id);
+};</code></pre>
+  </div>
+</div>
+
+<div id="insn_name" class="item">
+
+  <h3>
+    <span class="radius label">Function</span>
+    insn_name(id)
+    <a href="#insn_name" title="Link here"><span class="fa fa-link"></span></a>
+  </h3>
+
+
+  <p>
+    <span class="fa fa-reply fa-flip-vertical" title="Returns"></span>
+    <kbd title="Types">String</kbd>
+    <p>Instruction name, or null on error</p>
+  </p>
+
+
+  <hr>
+
+
+  <table class="args">
+    <thead>
+      <tr>
+        <th>Arg Name</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr>
+        <td class="name">id</td>
+        <td>Number</td>
+        <td><p>Instruction ID</p></td>
+      </tr>
+      
+    </tbody>
+  </table>
+
+
+  <p>Return instruction name as a string for given instruction ID.</p>
+
+  <div>
+    <a href="#" class="toggle-code right" title="Toggle the Source Code">
+      Source
+      <span class="fa fa-code"></span>
+    </a>
+    <hr class="toggle-sep">
+    <pre class="toggle-code hide language-javascript"><code class="language-javascript">exports.Cs.prototype.insn_name = function (id) {
+    return capstone.cs_insn_name(this.csh.deref(), id);
+};</code></pre>
+  </div>
+</div>
+
+<div id="insn_group" class="item">
+
+  <h3>
+    <span class="radius label">Function</span>
+    insn_group(insn, id)
+    <a href="#insn_group" title="Link here"><span class="fa fa-link"></span></a>
+  </h3>
+
+
+  <p>
+    <span class="fa fa-reply fa-flip-vertical" title="Returns"></span>
+    <kbd title="Types">Bool</kbd>
+    <p>True if the instruction belongs to the given group.</p>
+  </p>
+
+
+  <hr>
+
+
+  <table class="args">
+    <thead>
+      <tr>
+        <th>Arg Name</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr>
+        <td class="name">insn</td>
+        <td><a href="CsInsn.html#CsInsn">CsInsn</a></td>
+        <td><p>Instruction</p></td>
+      </tr>
+      
+      <tr>
+        <td class="name">id</td>
+        <td>Number</td>
+        <td><p>Group ID</p></td>
+      </tr>
+      
+    </tbody>
+  </table>
+
+
+  <p>Check if a disassembled instruction belongs to a particular group.</p><p><em>NOTE: this API is only valid when detail option is ON (OFF by default)</em></p>
+
+  <div>
+    <a href="#" class="toggle-code right" title="Toggle the Source Code">
+      Source
+      <span class="fa fa-code"></span>
+    </a>
+    <hr class="toggle-sep">
+    <pre class="toggle-code hide language-javascript"><code class="language-javascript">exports.Cs.prototype.insn_group = function (insn, id) {
+    return capstone.cs_insn_group(this.csh.deref(), insn._toNative(), id);
+};</code></pre>
+  </div>
+</div>
+
+<div id="reg_read" class="item">
+
+  <h3>
+    <span class="radius label">Function</span>
+    reg_read(insn, id)
+    <a href="#reg_read" title="Link here"><span class="fa fa-link"></span></a>
+  </h3>
+
+
+  <p>
+    <span class="fa fa-reply fa-flip-vertical" title="Returns"></span>
+    <kbd title="Types">Bool</kbd>
+    <p>True if the instruction reads the given register.</p>
+  </p>
+
+
+  <hr>
+
+
+  <table class="args">
+    <thead>
+      <tr>
+        <th>Arg Name</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr>
+        <td class="name">insn</td>
+        <td><a href="CsInsn.html#CsInsn">CsInsn</a></td>
+        <td><p>Instruction</p></td>
+      </tr>
+      
+      <tr>
+        <td class="name">id</td>
+        <td>Number</td>
+        <td><p>Register ID</p></td>
+      </tr>
+      
+    </tbody>
+  </table>
+
+
+  <p>Check if a disassembled instruction IMPLICITLY reads a particular register.</p><p><em>NOTE: this API is only valid when detail option is ON (OFF by default)</em></p>
+
+  <div>
+    <a href="#" class="toggle-code right" title="Toggle the Source Code">
+      Source
+      <span class="fa fa-code"></span>
+    </a>
+    <hr class="toggle-sep">
+    <pre class="toggle-code hide language-javascript"><code class="language-javascript">exports.Cs.prototype.reg_read = function (insn, id) {
+    return capstone.cs_reg_read(this.csh.deref(), insn._toNative(), id);
+};</code></pre>
+  </div>
+</div>
+
+<div id="reg_write" class="item">
+
+  <h3>
+    <span class="radius label">Function</span>
+    reg_write(insn, id)
+    <a href="#reg_write" title="Link here"><span class="fa fa-link"></span></a>
+  </h3>
+
+
+  <p>
+    <span class="fa fa-reply fa-flip-vertical" title="Returns"></span>
+    <kbd title="Types">Bool</kbd>
+    <p>True if the instruction writes the given register.</p>
+  </p>
+
+
+  <hr>
+
+
+  <table class="args">
+    <thead>
+      <tr>
+        <th>Arg Name</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr>
+        <td class="name">insn</td>
+        <td><a href="CsInsn.html#CsInsn">CsInsn</a></td>
+        <td><p>Instruction</p></td>
+      </tr>
+      
+      <tr>
+        <td class="name">id</td>
+        <td>Number</td>
+        <td><p>Register ID</p></td>
+      </tr>
+      
+    </tbody>
+  </table>
+
+
+  <p>Check if a disassembled instruction IMPLICITLY writes a particular register.</p><p><em>NOTE: this API is only valid when detail option is ON (OFF by default)</em></p>
+
+  <div>
+    <a href="#" class="toggle-code right" title="Toggle the Source Code">
+      Source
+      <span class="fa fa-code"></span>
+    </a>
+    <hr class="toggle-sep">
+    <pre class="toggle-code hide language-javascript"><code class="language-javascript">exports.Cs.prototype.reg_write = function (insn, id) {
+    return capstone.cs_reg_write(this.csh.deref(), insn._toNative(), id);
+};</code></pre>
+  </div>
+</div>
+
+<div id="op_count" class="item">
+
+  <h3>
+    <span class="radius label">Function</span>
+    op_count(insn, op_type)
+    <a href="#op_count" title="Link here"><span class="fa fa-link"></span></a>
+  </h3>
+
+
+  <p>
+    <span class="fa fa-reply fa-flip-vertical" title="Returns"></span>
+    <kbd title="Types">Number</kbd>
+    <p>Number of operands, or -1 on failure.</p>
+  </p>
+
+
+  <hr>
+
+
+  <table class="args">
+    <thead>
+      <tr>
+        <th>Arg Name</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr>
+        <td class="name">insn</td>
+        <td><a href="CsInsn.html#CsInsn">CsInsn</a></td>
+        <td><p>Instruction</p></td>
+      </tr>
+      
+      <tr>
+        <td class="name">op_type</td>
+        <td>Number</td>
+        <td><p>Operand type to be found.</p></td>
+      </tr>
+      
+    </tbody>
+  </table>
+
+
+  <p>Count the number of operands with a particular type for an instruction.</p><p><em>NOTE: this API is only valid when detail option is ON (OFF by default)</em></p>
+
+  <div>
+    <a href="#" class="toggle-code right" title="Toggle the Source Code">
+      Source
+      <span class="fa fa-code"></span>
+    </a>
+    <hr class="toggle-sep">
+    <pre class="toggle-code hide language-javascript"><code class="language-javascript">exports.Cs.prototype.op_count = function (insn, op_type) {
+    return capstone.cs_op_count(this.csh.deref(), insn._toNative(), op_type);
+};</code></pre>
+  </div>
+</div>
+
+<div id="op_index" class="item">
+
+  <h3>
+    <span class="radius label">Function</span>
+    op_index(insn, op_type, position)
+    <a href="#op_index" title="Link here"><span class="fa fa-link"></span></a>
+  </h3>
+
+
+  <p>
+    <span class="fa fa-reply fa-flip-vertical" title="Returns"></span>
+    <kbd title="Types">Number</kbd>
+    <p>Number of operands, or -1 on failure.</p>
+  </p>
+
+
+  <hr>
+
+
+  <table class="args">
+    <thead>
+      <tr>
+        <th>Arg Name</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr>
+        <td class="name">insn</td>
+        <td><a href="CsInsn.html#CsInsn">CsInsn</a></td>
+        <td><p>Instruction</p></td>
+      </tr>
+      
+      <tr>
+        <td class="name">op_type</td>
+        <td>Number</td>
+        <td><p>Operand type to be found.</p></td>
+      </tr>
+      
+      <tr>
+        <td class="name">position</td>
+        <td>Number</td>
+        <td><p>Position of the operand to be found.</p></td>
+      </tr>
+      
+    </tbody>
+  </table>
+
+
+  <p>Retrieve position of the operand of given type in disassembled instruction.</p><p><code>position</code> must be in range: <code>{ 1 .. Cs.op_count(insn, op_type) }</code></p><p><em>NOTE: this API is only valid when detail option is ON (OFF by default)</em></p>
+
+  <div>
+    <a href="#" class="toggle-code right" title="Toggle the Source Code">
+      Source
+      <span class="fa fa-code"></span>
+    </a>
+    <hr class="toggle-sep">
+    <pre class="toggle-code hide language-javascript"><code class="language-javascript">exports.Cs.prototype.op_index = function (insn, op_type, position) {
+    return capstone.cs_op_index(
+        this.csh.deref(),
+        insn._toNative(),
+        op_type,
+        position
+    );
+};</code></pre>
+  </div>
+</div>
+
+<div id="REL_ADDR" class="item">
+
+  <h3>
+    <span class="radius label">Function</span>
+    REL_ADDR(insn)
+    <a href="#REL_ADDR" title="Link here"><span class="fa fa-link"></span></a>
+  </h3>
+
+
+  <p>
+    <span class="fa fa-reply fa-flip-vertical" title="Returns"></span>
+    <kbd title="Types">Number</kbd>
+    <p>Instruction address</p>
+  </p>
+
+
+  <hr>
+
+
+  <table class="args">
+    <thead>
+      <tr>
+        <th>Arg Name</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr>
+        <td class="name">insn</td>
+        <td><a href="constants.html#Insn">Insn</a></td>
+        <td><p>Instruction</p></td>
+      </tr>
+      
+    </tbody>
+  </table>
+
+
+  <p>Calculate relative address for X86_64, for the given <code>Insn</code> structure.</p>
+
+  <div>
+    <a href="#" class="toggle-code right" title="Toggle the Source Code">
+      Source
+      <span class="fa fa-code"></span>
+    </a>
+    <hr class="toggle-sep">
+    <pre class="toggle-code hide language-javascript"><code class="language-javascript">exports.REL_ADDR = function (insn) {
+    return insn.address + insn.size + insn.detail.arch.x86.disp;
+};</code></pre>
+  </div>
+</div>
+
+
+      </section>
+    </div>
+    <section class="footer">
+      Copyright &copy; 2014-2015
+      <a href="mailto:jay@kodewerx.org">
+        Jay Oster
+      </a>
+
+
+      <a href="https://twitter.com/kodewerx">
+        <span class="round label fa fa-twitter">
+          @kodewerx
+        </span>
+      </a>
+
+
+      <br>
+
+      <a href="https://github.com/parasyte">Github</a> |
+      <a href="http://blog.kodewerx.org/">Blog</a> |
+      <a href="http://www.kodewerx.org/">Website</a>
+    </section>
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script>$(document).foundation();</script>
+    <script src="js/prism.min.js"></script>
+    <script src="js/vendor/jquery.easing.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
+

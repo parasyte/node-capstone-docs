@@ -1,1 +1,276 @@
-<!doctype html><html class="no-js" lang="en"> <head> <meta charset="utf-8" /> <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <title>node-capstone</title> <link href="css/normalize.css" rel="stylesheet" /> <link href="css/foundation.min.css" rel="stylesheet" /> <link href="css/prism.css" rel="stylesheet" /> <link href="css/app.css" rel="stylesheet" /> <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"> <script src="js/vendor/modernizr.js"></script> </head> <body> <nav class="top-bar" data-topbar> <ul class="title-area"> <li class="name"> <h1> <a href="index.html">node-capstone</a> </h1> </li> </ul> <section class="top-bar-section"> <ul class="right"> <li class="active"> <a href="https://github.com/parasyte/node-capstone.git"> <span class="fa fa-fw fa-2x fa-github-square"></span>Fork Me </a> </li> </ul> </section> </nav> <div class="row"> <section class="sidebar small-3 column"> <dl> <dt><a href="index.html">Main</a></dt>  <dt>Modules</dt> <dd> <ul class="side-nav">  <li><a href="arm.html">arm</a></li>  <li><a href="arm64.html">arm64</a></li>  <li><a href="mips.html">mips</a></li>  <li><a href="ppc.html">ppc</a></li>  <li><a href="x86.html">x86</a></li>  <li><a href="sparc.html">sparc</a></li>  <li><a href="sysz.html">sysz</a></li>  <li><a href="xcore.html">xcore</a></li>  </ul> </dd>   <dt>Classes</dt> <dd> <ul class="side-nav">  <li><a href="CsSkipdata.html">CsSkipdata</a></li>  <li><a href="CsInsn.html">CsInsn</a></li>  <li><a href="Cs.html">Cs</a></li>  </ul> </dd>   <dt><a href="functions.html">Functions</a></dt> <dd> <ul class="side-nav">  <li><a href="functions.html#INSN_OFFSET">INSN_OFFSET</a></li>  <li><a href="functions.html#version">version</a></li>  <li><a href="functions.html#version_bind">version_bind</a></li>  <li><a href="functions.html#support">support</a></li>  <li><a href="functions.html#strerror">strerror</a></li>  </ul> </dd>   <dt><a href="constants.html">Constants</a></dt> <dd> <ul class="side-nav">  <li><a href="constants.html#ARCH">ARCH</a></li>  <li><a href="constants.html#SUPPORT">SUPPORT</a></li>  <li><a href="constants.html#ERR">ERR</a></li>  <li><a href="constants.html#MODE">MODE</a></li>  <li><a href="constants.html#SYNTAX">SYNTAX</a></li>  </ul> </dd>  </dl> </section> <section class="content small-9 column">Classes: arm64 </section> </div> <section class="footer"> Copyright &copy; 2014 <a href="mailto:jay@kodewerx.org"> Jay Oster </a>  <a href="https://twitter.com/kodewerx"> <span class="round label fa fa-twitter"> @kodewerx </span> </a>  <br> <a href="https://github.com/parasyte">Github</a> |  <a href="http://blog.kodewerx.org/">Blog</a> |  <a href="http://www.kodewerx.org/">Website</a> </section> <script src="js/vendor/jquery.js"></script> <script src="js/foundation.min.js"></script> <script>$(document).foundation();</script> <script src="js/prism.min.js"></script> <script src="js/vendor/jquery.easing.js"></script> <script src="js/app.js"></script> </body></html>
+
+
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>node-capstone</title>
+    <link href="css/normalize.css" rel="stylesheet" />
+    <link href="css/foundation.min.css" rel="stylesheet" />
+    <link href="css/prism.css" rel="stylesheet" />
+    <link href="css/app.css" rel="stylesheet" />
+    <link
+      href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"
+      rel="stylesheet">
+    <script src="js/vendor/modernizr.js"></script>
+  </head>
+  <body>
+
+    <nav class="top-bar" data-topbar>
+      <ul class="title-area">
+        <li class="name">
+          <h1>
+            <a href="index.html">node-capstone</a>
+          </h1>
+        </li>
+      </ul>
+      <section class="top-bar-section">
+        <ul class="right">
+          <li class="active">
+            <a href="https://github.com/parasyte/node-capstone.git">
+              <span class="fa fa-fw fa-2x fa-github-square"></span>Fork Me
+            </a>
+          </li>
+        </ul>
+      </section>
+    </nav>
+
+    <div class="row">
+      <section class="sidebar small-3 column">
+        <dl>
+  <dt><a href="index.html">Main</a></dt>
+
+  <dt>Modules</dt>
+  <dd>
+    <ul class="side-nav">
+      <li>
+        <a href="arm.html">arm</a>
+      </li><li>
+        <a href="arm64.html">arm64</a>
+      </li><li>
+        <a href="mips.html">mips</a>
+      </li><li>
+        <a href="ppc.html">ppc</a>
+      </li><li>
+        <a href="x86.html">x86</a>
+      </li><li>
+        <a href="sparc.html">sparc</a>
+      </li><li>
+        <a href="sysz.html">sysz</a>
+      </li><li>
+        <a href="xcore.html">xcore</a>
+      </li>
+    </ul>
+  </dd>
+
+
+  <dt>Classes</dt>
+  <dd>
+    <ul class="side-nav">
+      <li>
+        <a href="CsSkipdata.html">CsSkipdata</a>
+      </li><li>
+        <a href="CsInsn.html">CsInsn</a>
+      </li><li>
+        <a href="Cs.html">Cs</a>
+      </li>
+    </ul>
+  </dd>
+
+
+  <dt><a href="functions.html">Functions</a></dt>
+  <dd>
+    <ul class="side-nav">
+      <li>
+        <a href="functions.html#_toNative">_toNative</a>
+      </li><li>
+        <a href="functions.html#INSN_OFFSET">INSN_OFFSET</a>
+      </li><li>
+        <a href="functions.html#version">version</a>
+      </li><li>
+        <a href="functions.html#version_bind">version_bind</a>
+      </li><li>
+        <a href="functions.html#support">support</a>
+      </li><li>
+        <a href="functions.html#strerror">strerror</a>
+      </li><li>
+        <a href="functions.html#close">close</a>
+      </li><li>
+        <a href="functions.html#errno">errno</a>
+      </li><li>
+        <a href="functions.html#disasm">disasm</a>
+      </li><li>
+        <a href="functions.html#disasm_lite">disasm_lite</a>
+      </li><li>
+        <a href="functions.html#disasm_iter">disasm_iter</a>
+      </li><li>
+        <a href="functions.html#reg_name">reg_name</a>
+      </li><li>
+        <a href="functions.html#insn_name">insn_name</a>
+      </li><li>
+        <a href="functions.html#insn_group">insn_group</a>
+      </li><li>
+        <a href="functions.html#reg_read">reg_read</a>
+      </li><li>
+        <a href="functions.html#reg_write">reg_write</a>
+      </li><li>
+        <a href="functions.html#op_count">op_count</a>
+      </li><li>
+        <a href="functions.html#op_index">op_index</a>
+      </li><li>
+        <a href="functions.html#REL_ADDR">REL_ADDR</a>
+      </li>
+    </ul>
+  </dd>
+
+
+  <dt><a href="constants.html">Constants</a></dt>
+  <dd>
+    <ul class="side-nav">
+      <li>
+        <a href="constants.html#REG">REG</a>
+      </li><li>
+        <a href="constants.html#INS">INS</a>
+      </li><li>
+        <a href="constants.html#GRP">GRP</a>
+      </li><li>
+        <a href="constants.html#SFT">SFT</a>
+      </li><li>
+        <a href="constants.html#CC">CC</a>
+      </li><li>
+        <a href="constants.html#MB">MB</a>
+      </li><li>
+        <a href="constants.html#OP">OP</a>
+      </li><li>
+        <a href="constants.html#SETEND">SETEND</a>
+      </li><li>
+        <a href="constants.html#CPSMODE">CPSMODE</a>
+      </li><li>
+        <a href="constants.html#CPSFLAG">CPSFLAG</a>
+      </li><li>
+        <a href="constants.html#VECTORDATA">VECTORDATA</a>
+      </li><li>
+        <a href="constants.html#EXT">EXT</a>
+      </li><li>
+        <a href="constants.html#SYSREG">SYSREG</a>
+      </li><li>
+        <a href="constants.html#MSR">MSR</a>
+      </li><li>
+        <a href="constants.html#PSTATE">PSTATE</a>
+      </li><li>
+        <a href="constants.html#VAS">VAS</a>
+      </li><li>
+        <a href="constants.html#VESS">VESS</a>
+      </li><li>
+        <a href="constants.html#BARRIER">BARRIER</a>
+      </li><li>
+        <a href="constants.html#TLBI">TLBI</a>
+      </li><li>
+        <a href="constants.html#AT">AT</a>
+      </li><li>
+        <a href="constants.html#DC">DC</a>
+      </li><li>
+        <a href="constants.html#IC">IC</a>
+      </li><li>
+        <a href="constants.html#PRFM">PRFM</a>
+      </li><li>
+        <a href="constants.html#ARCH">ARCH</a>
+      </li><li>
+        <a href="constants.html#SUPPORT">SUPPORT</a>
+      </li><li>
+        <a href="constants.html#ERR">ERR</a>
+      </li><li>
+        <a href="constants.html#MODE">MODE</a>
+      </li><li>
+        <a href="constants.html#SYNTAX">SYNTAX</a>
+      </li><li>
+        <a href="constants.html#BC">BC</a>
+      </li><li>
+        <a href="constants.html#HINT">HINT</a>
+      </li><li>
+        <a href="constants.html#AVX_BCAST">AVX_BCAST</a>
+      </li><li>
+        <a href="constants.html#AVX_SSE_CC">AVX_SSE_CC</a>
+      </li><li>
+        <a href="constants.html#AVX_AVX_CC">AVX_AVX_CC</a>
+      </li><li>
+        <a href="constants.html#AVX_RM">AVX_RM</a>
+      </li><li>
+        <a href="constants.html#PREFIX">PREFIX</a>
+      </li>
+    </ul>
+  </dd>
+
+
+  <dt><a href="misc.html">Miscellaneous</a></dt>
+  <dd>
+    <ul class="side-nav">
+      <li>
+        <a href="misc.html#id">id</a>
+      </li><li>
+        <a href="misc.html#address">address</a>
+      </li><li>
+        <a href="misc.html#bytes">bytes</a>
+      </li><li>
+        <a href="misc.html#mnemonic">mnemonic</a>
+      </li><li>
+        <a href="misc.html#op_str">op_str</a>
+      </li><li>
+        <a href="misc.html#detail">detail</a>
+      </li><li>
+        <a href="misc.html#detail.regs_read">detail.regs_read</a>
+      </li><li>
+        <a href="misc.html#detail.regs_write">detail.regs_write</a>
+      </li><li>
+        <a href="misc.html#detail.groups">detail.groups</a>
+      </li><li>
+        <a href="misc.html#detail">detail</a>
+      </li><li>
+        <a href="misc.html#mode">mode</a>
+      </li><li>
+        <a href="misc.html#syntax">syntax</a>
+      </li><li>
+        <a href="misc.html#skipdata">skipdata</a>
+      </li>
+    </ul>
+  </dd>
+
+</dl>
+
+      </section>
+      <section class="content small-9 column">
+
+Classes: arm64
+
+      </section>
+    </div>
+    <section class="footer">
+      Copyright &copy; 2014-2015
+      <a href="mailto:jay@kodewerx.org">
+        Jay Oster
+      </a>
+
+
+      <a href="https://twitter.com/kodewerx">
+        <span class="round label fa fa-twitter">
+          @kodewerx
+        </span>
+      </a>
+
+
+      <br>
+
+      <a href="https://github.com/parasyte">Github</a> |
+      <a href="http://blog.kodewerx.org/">Blog</a> |
+      <a href="http://www.kodewerx.org/">Website</a>
+    </section>
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script>$(document).foundation();</script>
+    <script src="js/prism.min.js"></script>
+    <script src="js/vendor/jquery.easing.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
+
