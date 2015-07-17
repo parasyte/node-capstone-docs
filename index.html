@@ -1,26 +1,30 @@
-<!doctype html><html class="no-js" lang="en"> <head> <meta charset="utf-8" /> <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <title>node-capstone</title> <link href="css/normalize.css" rel="stylesheet" /> <link href="css/foundation.min.css" rel="stylesheet" /> <link href="css/prism.css" rel="stylesheet" /> <link href="css/app.css" rel="stylesheet" /> <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"> <script src="js/vendor/modernizr.js"></script> </head> <body> <nav class="top-bar" data-topbar> <ul class="title-area"> <li class="name"> <h1> <a href="index.html">node-capstone</a> </h1> </li> </ul> <section class="top-bar-section"> <ul class="right"> <li class="active"> <a href="https://github.com/parasyte/node-capstone.git"> <span class="fa fa-fw fa-2x fa-github-square"></span>Fork Me </a> </li> </ul> </section> </nav> <div class="row"> <section class="sidebar small-3 column"> <dl> <dt><a href="index.html">Main</a></dt>  <dt>Modules</dt> <dd> <ul class="side-nav">  <li><a href="arm.html">arm</a></li>  <li><a href="arm64.html">arm64</a></li>  <li><a href="mips.html">mips</a></li>  <li><a href="ppc.html">ppc</a></li>  <li><a href="x86.html">x86</a></li>  </ul> </dd>   <dt>Classes</dt> <dd> <ul class="side-nav">  <li><a href="Insn.html">Insn</a></li>  <li><a href="Cs.html">Cs</a></li>  </ul> </dd>   <dt><a href="functions.html">Functions</a></dt> <dd> <ul class="side-nav">  <li><a href="functions.html#INSN_OFFSET">INSN_OFFSET</a></li>  <li><a href="functions.html#version">version</a></li>  <li><a href="functions.html#version_bind">version_bind</a></li>  <li><a href="functions.html#support">support</a></li>  <li><a href="functions.html#errno">errno</a></li>  <li><a href="functions.html#strerror">strerror</a></li>  </ul> </dd>   <dt><a href="constants.html">Constants</a></dt> <dd> <ul class="side-nav">  <li><a href="constants.html#ARCH">ARCH</a></li>  <li><a href="constants.html#SUPPORT">SUPPORT</a></li>  <li><a href="constants.html#ERR">ERR</a></li>  <li><a href="constants.html#MODE">MODE</a></li>  <li><a href="constants.html#SYNTAX">SYNTAX</a></li>  </ul> </dd>  </dl> </section> <section class="content small-9 column"><h1 id="node-capstone">node-capstone</h1>
+<!doctype html><html class="no-js" lang="en"> <head> <meta charset="utf-8" /> <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <title>node-capstone</title> <link href="css/normalize.css" rel="stylesheet" /> <link href="css/foundation.min.css" rel="stylesheet" /> <link href="css/prism.css" rel="stylesheet" /> <link href="css/app.css" rel="stylesheet" /> <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"> <script src="js/vendor/modernizr.js"></script> </head> <body> <nav class="top-bar" data-topbar> <ul class="title-area"> <li class="name"> <h1> <a href="index.html">node-capstone</a> </h1> </li> </ul> <section class="top-bar-section"> <ul class="right"> <li class="active"> <a href="https://github.com/parasyte/node-capstone.git"> <span class="fa fa-fw fa-2x fa-github-square"></span>Fork Me </a> </li> </ul> </section> </nav> <div class="row"> <section class="sidebar small-3 column"> <dl> <dt><a href="index.html">Main</a></dt>  <dt>Modules</dt> <dd> <ul class="side-nav">  <li><a href="arm.html">arm</a></li>  <li><a href="arm64.html">arm64</a></li>  <li><a href="mips.html">mips</a></li>  <li><a href="ppc.html">ppc</a></li>  <li><a href="x86.html">x86</a></li>  <li><a href="sparc.html">sparc</a></li>  <li><a href="sysz.html">sysz</a></li>  <li><a href="xcore.html">xcore</a></li>  </ul> </dd>   <dt>Classes</dt> <dd> <ul class="side-nav">  <li><a href="CsSkipdata.html">CsSkipdata</a></li>  <li><a href="CsInsn.html">CsInsn</a></li>  <li><a href="Cs.html">Cs</a></li>  </ul> </dd>   <dt><a href="functions.html">Functions</a></dt> <dd> <ul class="side-nav">  <li><a href="functions.html#INSN_OFFSET">INSN_OFFSET</a></li>  <li><a href="functions.html#version">version</a></li>  <li><a href="functions.html#version_bind">version_bind</a></li>  <li><a href="functions.html#support">support</a></li>  <li><a href="functions.html#strerror">strerror</a></li>  </ul> </dd>   <dt><a href="constants.html">Constants</a></dt> <dd> <ul class="side-nav">  <li><a href="constants.html#ARCH">ARCH</a></li>  <li><a href="constants.html#SUPPORT">SUPPORT</a></li>  <li><a href="constants.html#ERR">ERR</a></li>  <li><a href="constants.html#MODE">MODE</a></li>  <li><a href="constants.html#SYNTAX">SYNTAX</a></li>  </ul> </dd>  </dl> </section> <section class="content small-9 column"><h1 id="node-capstone">node-capstone</h1>
 <hr><p><kbd>node-capstone</kbd> provides Node.js bindings for the
 <a href="https://github.com/aquynh/capstone">Capstone</a> disassembler library, allowing
 binary data in <kbd>Buffer</kbd> objects to be disassembled using any of Capstone&#39;s
 supported architectures.</p>
 <h3 id="dependencies">Dependencies</h3>
 <ul>
-<li><a href="https://nodejs.org/">node.js v0.10.x</a><ul>
+<li><a href="https://nodejs.org/">node.js v0.12.x</a><ul>
 <li><a href="https://www.npmjs.org/">npm</a></li>
 </ul>
 </li>
-<li><a href="http://www.capstone-engine.org/download.html">capstone</a></li>
+<li><a href="http://www.capstone-engine.org/">Capstone</a></li>
 </ul>
-<p>Additionally, the Capstone library version needs to match the binding&#39;s version
-or it will throw an exception.</p>
 <h3 id="install">Install</h3>
 <p><kbd>npm install capstone</kbd></p>
+<h4 id="libcapstone">libcapstone</h4>
+<p>The Capstone library is not included, and must be installed separately. The
+recommended method to install on OSX is using homebrew:</p>
+<p><kbd>brew install capstone</kbd></p>
+<p>On Windows and Linux, install a pre-compiled binary from the
+<a href="http://www.capstone-engine.org/download.html">Capstone download</a> page, or
+build from source.</p>
+<p>Ensure <kbd>libcapstone</kbd> is available in your PATH. Additionally, the <kbd>libcapstone</kbd>
+version needs to match the binding&#39;s version.</p>
 <h3 id="basic-usage">Basic usage</h3>
 <pre><code class="lang-javascript">var capstone = require(&quot;capstone&quot;);
-
-var code = new Buffer([
-    0x55, 0x48, 0x8b, 0x05, 0xb8, 0x13, 0x00, 0x00
-]);
+var code = new Buffer([ 0x55, 0x48, 0x8b, 0x05, 0xb8, 0x13, 0x00, 0x00 ]);
 
 var cs = new capstone.Cs(capstone.ARCH_X86, capstone.MODE_64);
 
@@ -35,12 +39,12 @@ cs.disasm(code, 0x1000).forEach(function (insn) {
 
 cs.close();
 </code></pre>
-<p>For other examples, see the tests in the <kbd>specs</kbd> directory.</p>
+<p>For other examples, see the tests in the <kbd>spec</kbd> directory.</p>
 <p>Full documentation is available at <a href="https://parasyte.github.io/node-capstone-docs">https://parasyte.github.io/node-capstone-docs</a></p>
 <h3 id="license">License</h3>
 <p>The source code is hereby released under the MIT License. The full text of the
 license appears below.</p>
-<p>Copyright (c) 2014 Jay Oster</p>
+<p>Copyright (c) 2014-2015 Jay Oster</p>
 <p>Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the &quot;Software&quot;), to deal in
 the Software without restriction, including without limitation the rights to
