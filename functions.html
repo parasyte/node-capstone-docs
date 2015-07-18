@@ -353,7 +353,7 @@
       
       <tr>
         <td class="name">insns</td>
-        <td><a href="CsInsn.html#CsInsn">CsInsn[]</a></td>
+        <td><a href="classes/CsInsn.html#CsInsn">CsInsn[]</a></td>
         <td><p>Array of instructions.</p></td>
       </tr>
       
@@ -367,7 +367,7 @@
   </table>
 
 
-  <p>Calculate the offset of a disassembled instruction in its buffer,<br />given its position in its array of disassembled insn</p><p><em>NOTE: this macro works with position (&gt;=1), not index</em></p>
+  <p>Calculate the offset of a disassembled instruction in its buffer,<br />given its position in its array of disassembled insn</p><p><em>NOTE: this macro works with <code>position &gt;= 1</code>, not index</em></p>
 
   <div>
     <a href="#" class="toggle-code right" title="Toggle the Source Code">
@@ -393,7 +393,7 @@
   <p>
     <span class="fa fa-reply fa-flip-vertical" title="Returns"></span>
     <kbd title="Types">Number[]</kbd>
-    <p>Three-element array containing: [ combined, major, minor ]</p>
+    <p>Three-element array containing: <code>[ combined, major, minor ]</code></p>
   </p>
 
 
@@ -477,7 +477,7 @@ console.log(
 
   <p>
     <span class="fa fa-reply fa-flip-vertical" title="Returns"></span>
-    <kbd title="Types">Bool</kbd>
+    <kbd title="Types">Boolean</kbd>
     <p>True if Capstone supports the given arch or support.</p>
   </p>
 
@@ -649,7 +649,7 @@ console.log(capstone.support(capstone.SUPPORT_DIET)); //&gt; false
 
   <p>
     <span class="fa fa-reply fa-flip-vertical" title="Returns"></span>
-    <kbd title="Types"><a href="CsInsn.html#CsInsn">CsInsn[]</a></kbd>
+    <kbd title="Types"><a href="classes/CsInsn.html#CsInsn">CsInsn[]</a></kbd>
     <p>Array of instructions.</p>
   </p>
 
@@ -669,7 +669,7 @@ console.log(capstone.support(capstone.SUPPORT_DIET)); //&gt; false
       
       <tr>
         <td class="name">buffer</td>
-        <td><a href="constants.html#Buffer">Buffer</a></td>
+        <td>Buffer</td>
         <td><p>Binary to disassemble.</p></td>
       </tr>
       
@@ -762,7 +762,7 @@ console.log(capstone.support(capstone.SUPPORT_DIET)); //&gt; false
       
       <tr>
         <td class="name">buffer</td>
-        <td><a href="constants.html#Buffer">Buffer</a></td>
+        <td>Buffer</td>
         <td><p>Binary to disassemble.</p></td>
       </tr>
       
@@ -841,7 +841,7 @@ console.log(capstone.support(capstone.SUPPORT_DIET)); //&gt; false
 
   <p>
     <span class="fa fa-reply fa-flip-vertical" title="Returns"></span>
-    <kbd title="Types"><a href="constants.html#Boolean">Boolean</a></kbd>
+    <kbd title="Types">Boolean</kbd>
     <p>True if successfully disassembled one instruction.</p>
   </p>
 
@@ -861,7 +861,7 @@ console.log(capstone.support(capstone.SUPPORT_DIET)); //&gt; false
       
       <tr>
         <td class="name">buffer</td>
-        <td><a href="constants.html#Buffer">Buffer</a></td>
+        <td>Buffer</td>
         <td><p>Binary to disassemble.</p></td>
       </tr>
       
@@ -873,7 +873,7 @@ console.log(capstone.support(capstone.SUPPORT_DIET)); //&gt; false
       
       <tr>
         <td class="name">insn</td>
-        <td><a href="CsInsn.html#CsInsn">CsInsn</a></td>
+        <td><a href="classes/CsInsn.html#CsInsn">CsInsn</a></td>
         <td><p>Disassembled instruction detail.</p></td>
       </tr>
       
@@ -1015,7 +1015,7 @@ console.log(capstone.support(capstone.SUPPORT_DIET)); //&gt; false
 
   <p>
     <span class="fa fa-reply fa-flip-vertical" title="Returns"></span>
-    <kbd title="Types">Bool</kbd>
+    <kbd title="Types">Boolean</kbd>
     <p>True if the instruction belongs to the given group.</p>
   </p>
 
@@ -1035,7 +1035,7 @@ console.log(capstone.support(capstone.SUPPORT_DIET)); //&gt; false
       
       <tr>
         <td class="name">insn</td>
-        <td><a href="CsInsn.html#CsInsn">CsInsn</a></td>
+        <td><a href="classes/CsInsn.html#CsInsn">CsInsn</a></td>
         <td><p>Instruction</p></td>
       </tr>
       
@@ -1074,7 +1074,7 @@ console.log(capstone.support(capstone.SUPPORT_DIET)); //&gt; false
 
   <p>
     <span class="fa fa-reply fa-flip-vertical" title="Returns"></span>
-    <kbd title="Types">Bool</kbd>
+    <kbd title="Types">Boolean</kbd>
     <p>True if the instruction reads the given register.</p>
   </p>
 
@@ -1094,7 +1094,7 @@ console.log(capstone.support(capstone.SUPPORT_DIET)); //&gt; false
       
       <tr>
         <td class="name">insn</td>
-        <td><a href="CsInsn.html#CsInsn">CsInsn</a></td>
+        <td><a href="classes/CsInsn.html#CsInsn">CsInsn</a></td>
         <td><p>Instruction</p></td>
       </tr>
       
@@ -1133,7 +1133,7 @@ console.log(capstone.support(capstone.SUPPORT_DIET)); //&gt; false
 
   <p>
     <span class="fa fa-reply fa-flip-vertical" title="Returns"></span>
-    <kbd title="Types">Bool</kbd>
+    <kbd title="Types">Boolean</kbd>
     <p>True if the instruction writes the given register.</p>
   </p>
 
@@ -1153,7 +1153,7 @@ console.log(capstone.support(capstone.SUPPORT_DIET)); //&gt; false
       
       <tr>
         <td class="name">insn</td>
-        <td><a href="CsInsn.html#CsInsn">CsInsn</a></td>
+        <td><a href="classes/CsInsn.html#CsInsn">CsInsn</a></td>
         <td><p>Instruction</p></td>
       </tr>
       
@@ -1212,7 +1212,7 @@ console.log(capstone.support(capstone.SUPPORT_DIET)); //&gt; false
       
       <tr>
         <td class="name">insn</td>
-        <td><a href="CsInsn.html#CsInsn">CsInsn</a></td>
+        <td><a href="classes/CsInsn.html#CsInsn">CsInsn</a></td>
         <td><p>Instruction</p></td>
       </tr>
       
@@ -1271,7 +1271,7 @@ console.log(capstone.support(capstone.SUPPORT_DIET)); //&gt; false
       
       <tr>
         <td class="name">insn</td>
-        <td><a href="CsInsn.html#CsInsn">CsInsn</a></td>
+        <td><a href="classes/CsInsn.html#CsInsn">CsInsn</a></td>
         <td><p>Instruction</p></td>
       </tr>
       
@@ -1291,7 +1291,7 @@ console.log(capstone.support(capstone.SUPPORT_DIET)); //&gt; false
   </table>
 
 
-  <p>Retrieve position of the operand of given type in disassembled instruction.</p><p><code>position</code> must be in range: <code>{ 1 .. Cs.op_count(insn, op_type) }</code></p><p><em>NOTE: this API is only valid when detail option is ON (OFF by default)</em></p>
+  <p>Retrieve position of the operand of given type in disassembled instruction.</p><p><code>position</code> must be in range: <code>[1, n]</code> where <code>n == Cs.op_count(insn, op_type)</code></p><p><em>NOTE: this API is only valid when detail option is ON (OFF by default)</em></p>
 
   <div>
     <a href="#" class="toggle-code right" title="Toggle the Source Code">
@@ -1341,7 +1341,7 @@ console.log(capstone.support(capstone.SUPPORT_DIET)); //&gt; false
       
       <tr>
         <td class="name">insn</td>
-        <td><a href="constants.html#Insn">Insn</a></td>
+        <td><a href="classes/CsInsn.html#CsInsn">CsInsn</a></td>
         <td><p>Instruction</p></td>
       </tr>
       
@@ -1349,7 +1349,7 @@ console.log(capstone.support(capstone.SUPPORT_DIET)); //&gt; false
   </table>
 
 
-  <p>Calculate relative address for X86_64, for the given <code>Insn</code> structure.</p>
+  <p>Calculate relative address for X86_64, for the given <code>CsInsn</code> structure.</p>
 
   <div>
     <a href="#" class="toggle-code right" title="Toggle the Source Code">
